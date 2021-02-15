@@ -671,6 +671,25 @@ a:hover {
 //--//-->   ABOUT
 ======================================*/
 
+ul.eduqual{
+    display: block;
+    list-style-type: square;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    color: #0078ff;
+}
+
+.eduquali{
+  color: 0078ff;
+}
+
+li.eduquali span { color: #4e4e4e } /* text */
+
+
+
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
