@@ -906,7 +906,7 @@ I met so many people during this Virtual event and looking forward to gaining mo
                     </h5>
                   </div>
                   <div>
-                      <form action="" method="post" role="form" class="contactForm">
+                      <form id="submit-form"action=""  role="form" class="contactForm">
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage"></div>
                       <div class="row">
@@ -1017,6 +1017,24 @@ I met so many people during this Virtual event and looking forward to gaining mo
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script>
+    $("#submit-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbwQBccxBY9lT9S_RyyA0-yF4_EAzzSAKVIXAJyt1Q/exec",
+            data:$("#submit-form").serialize(),
+            method:"post",
+            success:function (response){
+                // alert("Form submitted successfully")
+                window.location.reload()
+                //window.location.href="https://google.com"
+            },
+            error:function (err){
+                // alert("Something Error")
 
+            }
+        })
+    })
+</script>
 </body>
 </html>
