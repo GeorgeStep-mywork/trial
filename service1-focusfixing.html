@@ -223,26 +223,26 @@
                 Want to Enrol?
               </h3>
             </div>
-            <form class="form-mf">
+            <form class="form-mf" id="course-form" action="" role="form">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
-                    <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required>
+                    <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required name="name">
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <div class="form-group">
-                    <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required>
+                    <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required name="email">
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-group">
-                    <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Subject" value="Want to Enrol for Iwesome">
+                    <input type="text" class="form-control input-mf" id="inputUrl" placeholder="Subject" value="Want to Enrol for Iwesome" name="subject">
                   </div>
                 </div>
                 <div class="col-md-12 mb-3">
                   <div class="form-group">
-                    <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message"
+                    <textarea id="textMessage" class="form-control input-mf" placeholder="Message *" name="message"
                       cols="45" rows="8" required></textarea>
                   </div>
                 </div>
@@ -398,6 +398,26 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <script>
+    $("#course-form").submit((e)=>{
+        e.preventDefault()
+        $.ajax({
+            url:"https://script.google.com/macros/s/AKfycbymmFOHVJsXppECpKyoG_A08CeiYd0VGIu-BcrNQ6q2glQrOjON/exec",
+            data:$("#course-form").serialize(),
+            method:"post",
+            success:function (response){
+                // alert("Thank You For Contacting.\n Your Email has Successfully Send........")
+                alert("Thank You!.\n We Will Contact You Shortly...")
+                // window.location.reload()
+                //window.location.href="https://google.com"
+                   },
+            error:function (err){
+                alert("Something Error")
+
+            }
+        })
+    })
+</script>
 
 </body>
 </html>
