@@ -1288,3 +1288,11 @@ footer .credits a {
     bottom: 15px;
   }
 }
+
+/* My Css */
+
+/* About */
+
+.box-shadow-full{
+  background-image: url(img/aboutbg.jpg);
+}
