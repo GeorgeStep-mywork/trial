@@ -693,6 +693,7 @@ li.eduquali span {
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  background-color: #f3f8ff;
 }
 
 .about-mf .about-img {
@@ -1298,4 +1299,8 @@ footer .credits a {
 
 .box-shadow-full {
   background-image: url(img/aboutbg.jpg);
+}
+
+.about-text{
+  font-weight: 320;
 }
