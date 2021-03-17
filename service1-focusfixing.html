@@ -13,7 +13,8 @@
 
  <!-- Bootstrap CSS File -->
  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="css/newstyles.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- Libraries CSS Files -->
  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
  <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -30,51 +31,7 @@
  Author: BootstrapMade.com
  License: https://bootstrapmade.com/license/
  ======================================================= -->
-  <style>
-      .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Stay in place */
-        z-index: 1;
-        /* Sit on top */
-        padding-top: 100px;
-        /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%;
-        /* Full width */
-        height: 100%;
-        /* Full height */
-        overflow: auto;
-        /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0);
-        /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Black w/ opacity */
-      }
-
-      /* Modal Content */
-      .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 180px;
-        border: 1px solid #888;
-        width: 90%;
-      }
-
-      /* The Close Button */
-      .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .popup {
-        margin-left: 200px;
-      }
-    </style>
+ 
 </head>
 
 <body>
@@ -278,6 +235,7 @@
                         id="inputName"
                         name="name"
                         placeholder="Name *"
+                        required
                       />
                     </div>
                   </div>
@@ -289,6 +247,7 @@
                         id="inputEmail1"
                         name="email"
                         placeholder="Email *"
+                        required
                       />
                     </div>
                   </div>
@@ -299,6 +258,7 @@
                         id="inputUrl"
                         placeholder="Subject"
                         name="subject"
+                        required
                         value="Want to Enrol for Iwesome"
                       />
                     </div>
@@ -312,12 +272,13 @@
                         name="message"
                         cols="45"
                         rows="8"
+                        required
                       ></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <button
-                      id="myBtn"
+                    
                       type="submit"
                       class="button button-a button-big button-rouded"
                     >
@@ -427,41 +388,23 @@
  </div> -->
  </div>
  </div>
-  <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <div class="popup">
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+     
+      <div class="w3-container">
+         <div>
+                 
+                  <div class="popup">
+                  
                   <h1>Thank You!!!</h1>
                   <h3>We Will Contact You Shortly</h3>
-                  <button
-                    onclick="myModal.style.display='none'"
-                    style="
-                      /* left: 72%; 
-                                            */
-                      cursor: pointer;
-                      display: inline-block;
-                      padding: 0.3rem 0.6rem;
-                      text-align: center;
-                      vertical-align: middle;
-                      -webkit-user-select: none;
-                      -moz-user-select: none;
-                      -ms-user-select: none;
-                      user-select: none;
-                      font-size: 1rem;
-                      border-radius: 0.3rem;
-                      border: 1px solid transparent; /*
-                                             transition: all 500ms ease; */
-                      cursor: pointer;
-                      margin-left: 11%;
-                      margin-top: 2%;
-                      width: 17%;
-                    "
-                  >
-                    OK
-                  </button>
+                    <button  onclick="document.getElementById('id01').style.display='none'; window.location.reload();"  type ="submit" class="button button-a button-big button-rouded">Ok</button>
                 </div>
-              </div>
-            </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
  </div>
  </section>
  <!--/ Section Blog-Single End /-->
@@ -519,39 +462,25 @@
             "https://script.google.com/macros/s/AKfycbxS85OiHw5AR5uscPUgVcDJVGuWFX7MfBpXIzpedQ/exec",
           data: $("#course-form").serialize(),
           method: "post",
-          success: function (response) {},
+          success: function (response) {
+             document.getElementById('id01').style.display='block'
+          },
           error: function (err) {
             alert("Something Error");
           },
         });
       });
     </script>
-    <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
+   <script>
+// Get the modal
+var modal = document.getElementById('id01');
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks the button, open the modal
-      btn.onclick = function () {
-        modal.style.display = "block";
-      };
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function () {
-        modal.style.display = "none";
-      };
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    </script>
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
